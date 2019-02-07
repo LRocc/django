@@ -1,16 +1,12 @@
 from django.test import TestCase
 from django.core.urlresolvers import reverse
 from django.contrib.staticfiles import finders
-
-# Thanks to Enzo Roiz https://github.com/enzoroiz who made these tests during an internship with us
-
-
+# General purpose tests nugged of somebody
 class GeneralTests(TestCase):
     def test_serving_static_files(self):
         # If using static media properly result is not NONE once it finds rango.jpg
         result = finders.find('images/rango.jpg')
         self.assertIsNotNone(result)
-
 
 class IndexPageTests(TestCase):
 
